@@ -9,7 +9,11 @@ const VideoList = (props) => {
   const videoItems = props.videos.map((video) => {
     // key 값을 안넣으면 에러가 남
     // key를 받아서 그것만 렌더링할수 있게 하기위해 무조건 key를 넘겨줘야함. 
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+      <VideoListItem 
+          onSelectedVideo={props.onSelectedVideo}
+          key={video.etag} video={video} />
+    )
   });
 
   return (
